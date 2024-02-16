@@ -44,7 +44,7 @@ export const HeroContent = () => {
                     <ul className="dynamic-text ">
                         <li><span>project experience</span></li>
                         <li><span>web design</span></li>
-                        <li><span>creativity</span></li>
+                        <li><span>solutions</span></li>
                         <li><span>innovation</span></li>
                         <li><span>solutions</span></li>
                     </ul>
@@ -61,7 +61,7 @@ export const HeroContent = () => {
             <motion.p
             variants={slideInFromLeft(0.8)}
             className='text-lg text-gray-400 max-w-[600px] '>
-                I'm a Front-End Developer and UI/UX Designer with experience in Website,
+                I&apos;m a Front-End Developer and UI/UX Designer with experience in Website,
                 Mobile, and Software Development. Check out my projects and skills.
             </motion.p>
 
@@ -69,7 +69,7 @@ export const HeroContent = () => {
             variants={slideInFromLeft(1)}
             className='py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[300px]'
             >
-                Let's Engage to Hyperdrive!
+                Let&apos;s Engage to Hyperdrive!
             </motion.a>
 
 
