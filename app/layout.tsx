@@ -18,6 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="https://www.svgrepo.com/show/530412/user.svg" />
+      </head>
       <body className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}>
         <StarsCanvas />
         <Navbar />
