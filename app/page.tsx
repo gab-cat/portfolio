@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="w-full h-full">
+    <main className="w-full h-full cursor-pointer">
       <div className="flex flex-col gap-20">
         <Hero />
         <Skills />

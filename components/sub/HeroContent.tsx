@@ -13,9 +13,9 @@ export const HeroContent = () => {
     <motion.div
     initial='hidden'
     animate='visible'
-    className='flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]'
+    className='z-50 flex flex-row items-center justify-center w-full px-20 mt-40'
     >
-        <div className='h-full w-full flex flex-col gap-5 justify-center m-auto text-start'>
+        <div className='flex flex-col justify-center w-full h-full gap-5 m-auto text-start'>
             
             <motion.div variants={slideInFromTop} className='flex flex-start'>
             <motion.div
@@ -67,7 +67,7 @@ export const HeroContent = () => {
 
             <motion.a
             variants={slideInFromLeft(1)}
-            className='py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[300px]'
+            className='py-2 button-primary z-50 text-center text-white cursor-pointer rounded-lg max-w-[300px]'
             >
                 Let&apos;s Engage to Hyperdrive!
             </motion.a>
@@ -77,7 +77,7 @@ export const HeroContent = () => {
 
         <motion.div
             variants={slideInFromRight(0.8)}
-            className='w-full h-full flec justify-center items-center'>
+            className='items-center justify-center w-full h-full flec'>
                 <Image 
                     src='mainIconsdark.svg'
                     alt="work icons"
