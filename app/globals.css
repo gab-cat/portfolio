@@ -105,6 +105,7 @@ html {
   background: #030014;
   border-left: 2px solid #fff;
   animation: typing 3s steps(10) infinite;
+  z-index: 0;
 }
 
 @keyframes typing {

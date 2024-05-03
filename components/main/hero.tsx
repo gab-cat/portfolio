@@ -1,9 +1,9 @@
 import React from 'react'
 import { HeroContent } from '../sub/HeroContent'
 
-export const Hero = () => {
+const Hero = () => {
   return (
-    <div className='relative flex flex-col h-full w-full z-10' id='about-me'>
+    <div className='relative z-10 flex flex-col w-full h-full' id='about-me'>
         <video 
         autoPlay 
         muted 
@@ -15,3 +15,5 @@ export const Hero = () => {
     </div>
   )
 }
+
+export default Hero;
