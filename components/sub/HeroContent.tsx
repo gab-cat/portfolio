@@ -22,7 +22,7 @@ export const HeroContent = () => {
             variants={slideInFromTop}
             className='Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] mr-[10px]'>
                 <SparklesIcon className='text-[#b49bff] mr-[10px] h-5 w-5'/>
-                <h1 className="Welcome-text text-[13px]">Front-End Developer</h1>
+                <h1 className="Welcome-text text-[13px]">Full-stack Developer</h1>
             </motion.div>
 
             <motion.div
@@ -31,6 +31,7 @@ export const HeroContent = () => {
                 <PaintBrushIcon className='text-[#b49bff] mr-[10px] h-5 w-5'/>
                 <h1 className="Welcome-text text-[13px]">UI/UX Designer</h1>
             </motion.div>
+            
             </motion.div>
 
             <motion.div
@@ -61,8 +62,8 @@ export const HeroContent = () => {
             <motion.p
             variants={slideInFromLeft(0.8)}
             className='text-lg text-gray-400 max-w-[600px] '>
-                I&apos;m a Front-End Developer and UI/UX Designer with experience in Website,
-                Mobile, and Software Development. Check out my projects and skills.
+                I&apos;m a  Full-stack Developer and UI/UX Designer with experience in Website,
+                Mobile, and Software Development. Check out my projects and skills!
             </motion.p>
 
             <motion.a
