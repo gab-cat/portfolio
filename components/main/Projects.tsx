@@ -1,6 +1,42 @@
 import React from "react";
 import ProjectCard from "../sub/ProjectCard";
 
+interface IProject {
+  title: string
+  description: string
+  technologies: string[]
+  liveUrl: string
+  githubUrl: string
+  imageUrl: string
+}
+
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description: "A full-stack e-commerce solution with real-time inventory management and secure payment processing.",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    liveUrl: "https://example-ecommerce.com",
+    githubUrl: "https://github.com/yourusername/ecommerce-platform",
+    imageUrl: "/placeholder.svg?height=200&width=400"
+  },
+  {
+    title: "Weather App",
+    description: "A responsive weather application providing real-time forecasts and interactive maps.",
+    technologies: ["Vue.js", "OpenWeatherMap API", "Mapbox"],
+    liveUrl: "https://example-weather-app.com",
+    githubUrl: "https://github.com/yourusername/weather-app",
+    imageUrl: "/placeholder.svg?height=200&width=400"
+  },
+  {
+    title: "Task Management Tool",
+    description: "A collaborative task management application with real-time updates and team analytics.",
+    technologies: ["Angular", "Firebase", "Chart.js"],
+    liveUrl: "https://example-task-manager.com",
+    githubUrl: "https://github.com/yourusername/task-manager",
+    imageUrl: "/placeholder.svg?height=200&width=400"
+  }
+]
+
 const Projects = () => {
   return (
     <div
@@ -11,21 +47,16 @@ const Projects = () => {
         My Projects
       </h1>
       <div className="flex flex-col w-full h-full gap-10 px-10 md:flex-row">
-        <ProjectCard
-          src="/NextWebsite.png"
-          title="Modern Next.js Portfolio"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        />
-        <ProjectCard
-          src="/CardImage.png"
-          title="Interactive Website Cards"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        />
-        <ProjectCard
-          src="/SpaceWebsite.png"
-          title="Space Themed Website"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        />
+        {projects.map((project: IProject, index) => (
+            <ProjectCard
+                key={index}
+                title={project.title}
+                description={project.description}
+                technologies={project.technologies}
+                liveUrl={project.liveUrl}
+                githubUrl={project.githubUrl}
+                imageUrl={project.imageUrl}
+        />))}
       </div>
     </div>
   );

@@ -5,6 +5,8 @@ import {motion} from 'framer-motion'
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/utils/motion'
 import { SparklesIcon, PaintBrushIcon } from '@heroicons/react/16/solid'
 import Image from "next/image";
+import TypewriterAnimation from "@/components/sub/typewriter";
+import Link from "next/link";
 
 
 export const HeroContent = () => {
@@ -13,7 +15,7 @@ export const HeroContent = () => {
     <motion.div
     initial='hidden'
     animate='visible'
-    className='z-50 flex flex-row items-center justify-center w-full px-20 mt-40'
+    className='z-50 flex flex-row items-center justify-center w-full sm:px-20 px-10 mt-40'
     >
         <div className='flex flex-col justify-center w-full h-full gap-5 m-auto text-start'>
             
@@ -36,42 +38,45 @@ export const HeroContent = () => {
 
             <motion.div
             variants={slideInFromLeft(0.5)}
-            className='flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto my-2  overflow-hidden'
+            className='flex flex-col gap-6 mt-6 sm:text-6xl text-4xl font-bold text-white max-w-[600px] w-auto h-auto my-2  overflow-hidden'
             >
                 <span>
                 Providing 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500"> the best </span>
                 <div className="relative mt-3 overflow-visible h-15">
-                    <ul className="dynamic-text ">
-                        <li><span>project experience</span></li>
-                        <li><span>web design</span></li>
-                        <li><span>solutions</span></li>
-                        <li><span>innovation</span></li>
-                        <li><span>solutions</span></li>
-                    </ul>
+                <TypewriterAnimation />
+                    {/*<ul className="dynamic-text ">*/}
+                    {/*    <li><span>project experience</span></li>*/}
+                    {/*    <li><span>web design</span></li>*/}
+                    {/*    <li><span>solutions</span></li>*/}
+                    {/*    <li><span>innovation</span></li>*/}
+                    {/*    <li><span>solutions</span></li>*/}
+                    {/*</ul>*/}
                 </div>
                 </span>
             </motion.div>
 
             <motion.h1
             variants={slideInFromLeft(0.8)}
-            className='text-2xl font-semibold text-gray-100 my-2 max-w-[600px] mb-[0px]'>
+            className=' text-lg sm:text-2xl font-semibold text-gray-100 my-2 max-w-[600px] mb-[0px]'>
                 Hi! My name is Gabriel Angelo, you can call me Gab.
             </motion.h1>
 
             <motion.p
             variants={slideInFromLeft(0.8)}
-            className='text-lg text-gray-400 max-w-[600px] '>
+            className='text-sm sm:text-lg text-gray-400 max-w-[600px] '>
                 I&apos;m a  Full-stack Developer and UI/UX Designer with experience in Website,
                 Mobile, and Software Development. Check out my projects and skills!
             </motion.p>
 
-            <motion.a
+            <motion.div
             variants={slideInFromLeft(1)}
             className='py-2 button-primary z-50 text-center text-white cursor-pointer rounded-lg max-w-[300px]'
             >
+                <Link href={"/quote"} >
                 Let&apos;s Engage to Hyperdrive!
-            </motion.a>
+                </Link>
+            </motion.div>
 
 
         </div>
