@@ -1,74 +1,37 @@
-import React from "react";
-import {
-  RxDiscordLogo,
-  RxGithubLogo,
-  RxInstagramLogo,
-  RxTwitterLogo,
-  RxLinkedinLogo,
-} from "react-icons/rx";
+import Link from 'next/link'
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
 
-import { FaYoutube } from "react-icons/fa";
+export default function ProjFooter() {
 
-const Footer = () => {
-  return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] ">
-        <div className="flex flex-col items-center justify-center w-full m-auto">
-            <div className="flex flex-row flex-wrap items-center justify-around w-full h-full">
-                
-
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">Community</div>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <FaYoutube />
-                        <span className="text-[15px] ml-[6px]">Youtube</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxGithubLogo />
-                        <span className="text-[15px] ml-[6px]">Github</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxDiscordLogo />
-                        <span className="text-[15px] ml-[6px]">Discord</span>    
-                    </p>
+    return (
+        <main className="z-10 backdrop-blur-sm bg-transparent/45 border-t">
+            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+                <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+                    {['Home', 'Projects', 'About', 'Contact'].map((item) => (
+                        <div key={item} className="px-5 py-2">
+                            <Link href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="text-gray-200 text-lg font-semibold transition-all hover:text-gray-500">
+                                {item}
+                            </Link>
+                        </div>
+                    ))}
+                </nav>
+                <div className="mt-8 flex justify-center space-x-6 ">
+                    {[
+                        { name: 'GitHub', href: '#', icon: Github },
+                        { name: 'LinkedIn', href: '#', icon: Linkedin },
+                        { name: 'Twitter', href: '#', icon: Twitter },
+                        { name: 'Email', href: 'mailto:your.email@example.com', icon: Mail },
+                    ].map((item) => (
+                        <a key={item.name} href={item.href} className="text-gray-200 transition-all hover:text-gray-500">
+                            <span className="sr-only">{item.name}</span>
+                            <item.icon className="h-6 w-6" aria-hidden="true" />
+                        </a>
+                    ))}
                 </div>
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">Social Media</div>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <FaYoutube />
-                        <span className="text-[15px] ml-[6px]">Instagram</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxGithubLogo />
-                        <span className="text-[15px] ml-[6px]">Twitter</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxDiscordLogo />
-                        <span className="text-[15px] ml-[6px]">Linkedin</span>    
-                    </p>
-                </div>
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">About</div>
-                   <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                     
-                        <span className="text-[15px] ml-[6px]">Become Sponsor</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                      
-                        <span className="text-[15px] ml-[6px]">Learning about me</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                  
-                        <span className="text-[15px] ml-[6px]">catimbanggabriel@gmail.com</span>    
-                    </p>
-                </div>
+                <p className="mt-8 text-center text-base text-muted-foreground">
+                    &copy; 2024 Gabriel Angelo Catimbang. All rights reserved.
+                </p>
             </div>
-
-            <div className="mb-[20px] text-[15px] text-center">
-                &copy; WebChain Dev 2023 Inc. All rights reserved
-            </div>
-        </div>
-    </div>
-  )
+        </main>
+    )
 }
-
-export default Footer

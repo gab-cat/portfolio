@@ -4,7 +4,7 @@ import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
 export default function ProjFooter() {
 
     return (
-        <main className=" border-t">
+        <main className="z-10  border-t">
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
                 <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
                     {['Home', 'Projects', 'About', 'Contact'].map((item) => (
@@ -29,7 +29,7 @@ export default function ProjFooter() {
                     ))}
                 </div>
                 <p className="mt-8 text-center text-base text-muted-foreground">
-                    &copy; 2024 YourName. All rights reserved.
+                    &copy; 2024 Gabriel Angelo Catimbang. All rights reserved.
                 </p>
             </div>
         </main>

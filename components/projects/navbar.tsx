@@ -15,6 +15,7 @@ export default function Navbar() {
         { name: 'Contact', href: '/contact', icon: Mail },
     ]
 
+
     return (
         <nav className={`w-full h-[65px] text-white fixed top-0 shadow-lg ${pathname == "/" ? "shadow-[#2a0e61]/50" : "shadow-primary/10"}  bg-[#03001417] backdrop-blur-md z-50`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
@@ -22,7 +23,7 @@ export default function Navbar() {
                     <div className="flex">
                         <div className="flex-shrink-0 flex items-center">
                             <Link href="/" className={`text-2xl font-bold ${ pathname == "/" ? "text-white" : "text-primary" } `}>
-                                Gabriel Angelo Catimbang
+                                Gabriel Catimbang
                             </Link>
                         </div>
                     </div>

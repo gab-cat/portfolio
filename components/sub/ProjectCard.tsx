@@ -22,7 +22,7 @@ interface project {
 
 const ProjectCard = (project: project) => {
     return (
-        <Card  className="flex bg-gray-900 z-10 flex-col bg-opacity-30 backdrop-filter backdrop-blur-xs">
+        <Card  className="flex bg-transparent z-10 flex-col  backdrop-blur-sm">
             <CardHeader>
                 <Image width={400} height={400} src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover rounded-t-lg" />
             </CardHeader>

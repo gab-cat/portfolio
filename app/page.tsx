@@ -5,6 +5,9 @@ import Hero from "@/components/main/hero";
 import Footer from "@/components/main/Footer";
 import StarsCanvas from "@/components/main/StarBackground";
 import Navbar from "@/components/projects/navbar";
+import AboutMe from "@/components/sub/about-me";
+import ProjFooter from "@/components/projects/footer";
+import CTA from "@/components/sub/cta";
 
 
 export default function Home() {
@@ -15,12 +18,15 @@ export default function Home() {
             <main className="w-full h-full">
                 <div className="flex flex-col gap-20">
                     <Hero/>
+                    <AboutMe />
+
                     <Skills/>
-                    <Encryption/>
+                    {/*<Encryption/>*/}
                     <Projects/>
+                    <CTA/>
                 </div>
             </main>
-            <Footer/>
+            <Footer />
         </section>
     </>;
     return section;

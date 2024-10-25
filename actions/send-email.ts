@@ -8,14 +8,14 @@ import { formSchema } from "@/schema/quote"
 const transporter = nodemailer.createTransport({
     host: "smtp.zoho.com",
     port: 587,
-    secure: false, // Use SSL
+    secure: false,
     auth: {
         user: "support@gab-cat.me",
         pass: process.env.PASSWORD,
     },
 });
 
-export  const sendQuoteEmail = async (formData: any) => {
+export  const sendQuoteEmail = async (formData: any) :Promise<{success: boolean, message: string}> => {
     const validatedData = formSchema.safeParse(formData);
 
     if (!validatedData.success) {
@@ -87,9 +87,17 @@ export  const sendQuoteEmail = async (formData: any) => {
         html: emailBody,
     };
 
+    const mailCopy = {
+        from: `Gabriel Catimbang <support@gab-cat.me>`,
+        to: 'catimbanggabriel@gmail.com',
+        subject: `Quote Request <${email}>`,
+        html: emailBody,
+    };
+
     try {
         // Send the email using the transporter
         const result = await transporter.sendMail(mailOptions);
+        await transporter.sendMail(mailCopy);
         console.log(result)
         return {
             success: true,
