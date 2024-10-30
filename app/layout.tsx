@@ -6,6 +6,7 @@ import { Navbar } from "@/components/main/Navbar";
 import ProjFooter from "@/components/projects/footer";
 import React from "react";
 import {usePathname} from "next/navigation";
+import Chatwoot from "@/components/main/Chatwoot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,8 @@ export default function Layout({
       </head>
       <body className={`${inter.className} overflow-y-scroll overflow-x-hidden`}>
         {children}
-        </body>
+        <Chatwoot/>
+      </body>
     </html>
   );
 }
