@@ -5,6 +5,7 @@ import Script from 'next/script';
 export default function Chatwoot() {
     return (
         <>
+            {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
             <Script
                 id="chatwoot-settings"
                 strategy="beforeInteractive"
@@ -19,7 +20,7 @@ export default function Chatwoot() {
                 }}
             />
             <Script
-                src="https://chat.gab-cat.me/packs/js/sdk.js"
+                src={"https://chat.gab-cat.me/packs/js/sdk.js"}
                 strategy="afterInteractive"
                 onLoad={() => {
                     /* @ts-expect-error */

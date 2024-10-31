@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Search, ExternalLink } from 'lucide-react'
 import Navbar from "@/components/projects/navbar";
 import ProjFooter from "@/components/projects/footer";
+import {useAutoAnimate} from "@formkit/auto-animate/react";
 
 
 
@@ -52,6 +53,7 @@ const projects = [
 
 export default function ProjectsPage() {
     const [searchTerm, setSearchTerm] = useState('')
+    const [parent] = useAutoAnimate();
 
     const filteredProjects = projects.filter(project =>
         project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -84,42 +86,51 @@ export default function ProjectsPage() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredProjects.map((project, index) => (
-                        <motion.div
-                            key={project.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                        >
-                            <Card className="h-full flex flex-col">
-                                <Image
-                                    src={project.image}
-                                    alt={project.title}
-                                    width={600}
-                                    height={400}
-                                    className="object-cover h-48 w-full rounded-t-lg"
-                                />
-                                <CardContent className="flex-grow">
-                                    <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
-                                    <p className="text-muted-foreground mb-4">{project.description}</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.tags.map(tag => (
-                                            <Badge key={tag} variant="secondary">{tag}</Badge>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                                <CardFooter>
-                                    <Button asChild className="w-full">
-                                        <Link href={project.link}>
-                                            View Project <ExternalLink className="ml-2 h-4 w-4" />
-                                        </Link>
-                                    </Button>
-                                </CardFooter>
-                            </Card>
-                        </motion.div>
-                    ))}
-                </div>
+                <ul ref={parent} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {filteredProjects.length === 0 ? (
+                        <div className="flex justify-center items-center h-64">
+                            <p className="text-lg font-semibold text-muted-foreground">No projects found with that keyword.</p>
+                        </div>
+                    ) : (
+                        <>
+                            {filteredProjects.map((project, index) => (
+                                <motion.li
+                                    key={project.id}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                >
+                                    <Card className="h-full flex flex-col">
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            width={600}
+                                            height={400}
+                                            className="object-cover h-48 w-full rounded-t-lg"
+                                        />
+                                        <CardContent className="flex-grow">
+                                            <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
+                                            <p className="text-muted-foreground mb-4">{project.description}</p>
+                                            <div className="flex flex-wrap gap-2">
+                                                {project.tags.map(tag => (
+                                                    <Badge key={tag} variant="secondary">{tag}</Badge>
+                                                ))}
+                                            </div>
+                                        </CardContent>
+                                        <CardFooter>
+                                            <Button asChild className="w-full">
+                                                <Link href={project.link}>
+                                                    View Project <ExternalLink className="ml-2 h-4 w-4" />
+                                                </Link>
+                                            </Button>
+                                        </CardFooter>
+                                    </Card>
+                                </motion.li>
+                            ))}
+                        </>
+                    )}
+
+                </ul>
             </main>
             <ProjFooter />
         </>
